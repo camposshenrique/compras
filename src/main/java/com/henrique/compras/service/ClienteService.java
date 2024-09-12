@@ -28,8 +28,8 @@ public class ClienteService {
    return clientesRepository.findTop3ClientesFieis();
   }
 
-  public ProdutoDto getRecomendacaoVinho(long clientId){
-    Produtos produto = produtosRepository.findProdutoRecomendado(clientId).orElseThrow(
+  public ProdutoDto getRecomendacaoVinho(String clienteCpf){
+    Produtos produto = produtosRepository.findProdutoRecomendado(clienteCpf).orElseThrow(
         EntidadeNaoEncontradaException::new);
     return produtosMapper.toDto(produto);
   }

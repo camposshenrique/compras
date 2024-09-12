@@ -19,7 +19,7 @@ public class ClientesController implements ClientesApi{
   }
 
   @Override
-  public ProdutoDto getRecomendacaoVinho(long clienteId) {
-    return clienteService.getRecomendacaoVinho(clienteId);
+  public ProdutoDto getRecomendacaoVinho(String clienteCpf) {
+    return clienteService.getRecomendacaoVinho(clienteCpf);
   }
 }

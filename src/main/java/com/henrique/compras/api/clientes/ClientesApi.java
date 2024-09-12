@@ -27,7 +27,7 @@ public interface ClientesApi {
   )
   List<ClienteFielDto> getClientesFieis();
 
-  @GetMapping("/recomendacao/{clienteId}/tipo")
+  @GetMapping("/recomendacao/{clienteCpf}/tipo")
   @Operation(summary = "Retorna uma recomendação de vinho para o cliente referido.",
       responses = {
           @ApiResponse(responseCode = "200", description = "Operação realizada com sucesso", content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE)),
@@ -35,6 +35,6 @@ public interface ClientesApi {
           @ApiResponse(responseCode = "500", description = "Erro interno do servidor", content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE))
       }
   )
-  ProdutoDto getRecomendacaoVinho(@Valid @PathVariable long clienteId);
+  ProdutoDto getRecomendacaoVinho(@Valid @PathVariable String clienteCpf);
 
 }

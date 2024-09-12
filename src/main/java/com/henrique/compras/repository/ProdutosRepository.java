@@ -40,10 +40,10 @@ public interface ProdutosRepository extends
   @Query(value = "select p.* from PRODUTOS p\n"
       + "join COMPRAS co on p.ID = co.PRODUTOS_ID\n"
       + "join PUBLIC.CLIENTES C on co.CLIENTES_ID = C.ID\n"
-      + "where c.ID = :clienteId\n"
+      + "where c.CPF = :clienteCpf\n"
       + "order by co.QUANTIDADE desc\n"
       + "limit 1;", nativeQuery = true)
-  Optional<Produtos> findProdutoRecomendado(long clienteId);
+  Optional<Produtos> findProdutoRecomendado(String clienteCpf);
 
   Produtos findProdutosByCodigo(String codigo);
 
