@@ -45,4 +45,6 @@ public interface ProdutosRepository extends
       + "limit 1;", nativeQuery = true)
   Optional<Produtos> findProdutoRecomendado(long clienteId);
 
+  Produtos findProdutosByCodigo(String codigo);
+
 }

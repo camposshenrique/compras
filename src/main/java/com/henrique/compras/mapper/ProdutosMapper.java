@@ -17,4 +17,14 @@ public class ProdutosMapper {
         .build();
   }
 
+  public Produtos toEntity(ProdutoDto produtoDto){
+    return Produtos.builder()
+        .anoCompra(produtoDto.getAnoCompra())
+        .preco(produtoDto.getPreco())
+        .safra(produtoDto.getSafra())
+        .tipoVinho(produtoDto.getTipoVinho())
+        .codigo(produtoDto.getCodigo())
+        .build();
+  }
+
 }

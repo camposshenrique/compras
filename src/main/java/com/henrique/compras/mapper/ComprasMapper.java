@@ -6,6 +6,7 @@ import com.henrique.compras.api.entity.Produtos;
 import com.henrique.compras.api.response.ClienteDto;
 import com.henrique.compras.api.response.CompraDto;
 import com.henrique.compras.api.response.ProdutoDto;
+import com.henrique.compras.api.response.ShoppingDto;
 import java.math.BigDecimal;
 import org.springframework.stereotype.Component;
 
@@ -25,6 +26,16 @@ public class ComprasMapper {
         .cliente(clienteDto)
         .produto(produtoDto)
         .build();
+  }
+
+  public Compras toEntity(ShoppingDto shoppingDto, Clientes clientes, Produtos produtos) {
+
+    return Compras.builder()
+        .clientes(clientes)
+        .produtos(produtos)
+        .quantidade(shoppingDto.getQuantidade())
+        .build();
+
   }
 
   private ProdutoDto toProdutoDto(Produtos produtos) {

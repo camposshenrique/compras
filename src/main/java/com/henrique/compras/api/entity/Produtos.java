@@ -23,8 +23,8 @@ public class Produtos {
 
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
-  private long id;
-  private int codigo;
+  private Long id;
+  private String codigo;
   private String tipoVinho;
   private BigDecimal preco;
   private String safra;

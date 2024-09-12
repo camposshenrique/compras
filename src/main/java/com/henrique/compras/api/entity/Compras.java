@@ -24,7 +24,7 @@ public class Compras {
 
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
-  private long id;
+  private Long id;
   private int quantidade;
   @ManyToOne(fetch = FetchType.LAZY)
   private Produtos produtos;
